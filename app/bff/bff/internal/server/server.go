@@ -26,29 +26,58 @@ import (
 	authorization_helper "github.com/teamgram/teamgram-server/app/bff/authorization"
 	autodownload_helper "github.com/teamgram/teamgram-server/app/bff/autodownload"
 	"github.com/teamgram/teamgram-server/app/bff/bff/internal/config"
+	bots_helper "github.com/teamgram/teamgram-server/app/bff/bots"
+	channels_helper "github.com/teamgram/teamgram-server/app/bff/channels"
 	chatinvites_helper "github.com/teamgram/teamgram-server/app/bff/chatinvites"
 	chats_helper "github.com/teamgram/teamgram-server/app/bff/chats"
 	configuration_helper "github.com/teamgram/teamgram-server/app/bff/configuration"
 	contacts_helper "github.com/teamgram/teamgram-server/app/bff/contacts"
+	deeplinks_helper "github.com/teamgram/teamgram-server/app/bff/deeplinks"
 	dialogs_helper "github.com/teamgram/teamgram-server/app/bff/dialogs"
 	drafts_helper "github.com/teamgram/teamgram-server/app/bff/drafts"
+	emoji_helper "github.com/teamgram/teamgram-server/app/bff/emoji"
 	files_helper "github.com/teamgram/teamgram-server/app/bff/files"
+	folders_helper "github.com/teamgram/teamgram-server/app/bff/folders"
+	games_helper "github.com/teamgram/teamgram-server/app/bff/games"
+	gifs_helper "github.com/teamgram/teamgram-server/app/bff/gifs"
+	groupcalls_helper "github.com/teamgram/teamgram-server/app/bff/groupcalls"
+	importedchats_helper "github.com/teamgram/teamgram-server/app/bff/importedchats"
+	inlinebot_helper "github.com/teamgram/teamgram-server/app/bff/inlinebot"
+	internalbot_helper "github.com/teamgram/teamgram-server/app/bff/internalbot"
+	langpack_helper "github.com/teamgram/teamgram-server/app/bff/langpack"
 	messages_helper "github.com/teamgram/teamgram-server/app/bff/messages"
+	messagethreads_helper "github.com/teamgram/teamgram-server/app/bff/messagethreads"
 	miscellaneous_helper "github.com/teamgram/teamgram-server/app/bff/miscellaneous"
 	notification_helper "github.com/teamgram/teamgram-server/app/bff/notification"
 	nsfw_helper "github.com/teamgram/teamgram-server/app/bff/nsfw"
 	passkeyhelper "github.com/teamgram/teamgram-server/app/bff/passkey"
 	passport_helper "github.com/teamgram/teamgram-server/app/bff/passport"
+	payments_helper "github.com/teamgram/teamgram-server/app/bff/payments"
+	polls_helper "github.com/teamgram/teamgram-server/app/bff/polls"
 	premium_helper "github.com/teamgram/teamgram-server/app/bff/premium"
 	privacysettingshelper "github.com/teamgram/teamgram-server/app/bff/privacysettings"
+	promodata_helper "github.com/teamgram/teamgram-server/app/bff/promodata"
 	qrcode_helper "github.com/teamgram/teamgram-server/app/bff/qrcode"
+	reactions_helper "github.com/teamgram/teamgram-server/app/bff/reactions"
+	reports_helper "github.com/teamgram/teamgram-server/app/bff/reports"
 	savedmessagedialogshelper "github.com/teamgram/teamgram-server/app/bff/savedmessagedialogs"
+	scheduledmessages_helper "github.com/teamgram/teamgram-server/app/bff/scheduledmessages"
+	seamless_helper "github.com/teamgram/teamgram-server/app/bff/seamless"
+	secretchats_helper "github.com/teamgram/teamgram-server/app/bff/secretchats"
 	sponsoredmessages_helper "github.com/teamgram/teamgram-server/app/bff/sponsoredmessages"
+	statistics_helper "github.com/teamgram/teamgram-server/app/bff/statistics"
+	stickers_helper "github.com/teamgram/teamgram-server/app/bff/stickers"
+	themes_helper "github.com/teamgram/teamgram-server/app/bff/themes"
 	tos_helper "github.com/teamgram/teamgram-server/app/bff/tos"
+	tsf_helper "github.com/teamgram/teamgram-server/app/bff/tsf"
+	twofa_helper "github.com/teamgram/teamgram-server/app/bff/twofa"
 	updates_helper "github.com/teamgram/teamgram-server/app/bff/updates"
 	userchannelprofileshelper "github.com/teamgram/teamgram-server/app/bff/userchannelprofiles"
 	usernames_helper "github.com/teamgram/teamgram-server/app/bff/usernames"
 	users_helper "github.com/teamgram/teamgram-server/app/bff/users"
+	voipcalls_helper "github.com/teamgram/teamgram-server/app/bff/voipcalls"
+	wallpapers_helper "github.com/teamgram/teamgram-server/app/bff/wallpapers"
+	webpage_helper "github.com/teamgram/teamgram-server/app/bff/webpage"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -351,6 +380,209 @@ func (s *Server) Initialize() error {
 		mtproto.RegisterRPCPasskeyServer(
 			grpcServer,
 			passkeyhelper.New(passkeyhelper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// reports_helper
+		mtproto.RegisterRPCReportsServer(
+			grpcServer,
+			reports_helper.New(reports_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// gifs_helper
+		mtproto.RegisterRPCGifsServer(
+			grpcServer,
+			gifs_helper.New(gifs_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// promodata_helper
+		mtproto.RegisterRPCPromoDataServer(
+			grpcServer,
+			promodata_helper.New(promodata_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// tsf_helper
+		mtproto.RegisterRPCTsfServer(
+			grpcServer,
+			tsf_helper.New(tsf_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// twofa_helper
+		mtproto.RegisterRPCTwoFaServer(
+			grpcServer,
+			twofa_helper.New(twofa_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// seamless_helper
+		mtproto.RegisterRPCSeamlessServer(
+			grpcServer,
+			seamless_helper.New(seamless_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// voipcalls_helper
+		mtproto.RegisterRPCVoipCallsServer(
+			grpcServer,
+			voipcalls_helper.New(voipcalls_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// channels_helper
+		mtproto.RegisterRPCChannelsServer(
+			grpcServer,
+			channels_helper.New(channels_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// deeplinks_helper
+		mtproto.RegisterRPCDeepLinksServer(
+			grpcServer,
+			deeplinks_helper.New(deeplinks_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// webpage_helper
+		mtproto.RegisterRPCWebPageServer(
+			grpcServer,
+			webpage_helper.New(webpage_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// secretchats_helper
+		mtproto.RegisterRPCSecretChatsServer(
+			grpcServer,
+			secretchats_helper.New(secretchats_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// inlinebot_helper
+		mtproto.RegisterRPCInlineBotServer(
+			grpcServer,
+			inlinebot_helper.New(inlinebot_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// bots_helper
+		mtproto.RegisterRPCBotsServer(
+			grpcServer,
+			bots_helper.New(bots_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// internalbot_helper
+		mtproto.RegisterRPCInternalBotServer(
+			grpcServer,
+			internalbot_helper.New(internalbot_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// themes_helper
+		mtproto.RegisterRPCThemesServer(
+			grpcServer,
+			themes_helper.New(themes_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// emoji_helper
+		mtproto.RegisterRPCEmojiServer(
+			grpcServer,
+			emoji_helper.New(emoji_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// folders_helper
+		mtproto.RegisterRPCFoldersServer(
+			grpcServer,
+			folders_helper.New(folders_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// games_helper
+		mtproto.RegisterRPCGamesServer(
+			grpcServer,
+			games_helper.New(games_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// groupcalls_helper
+		mtproto.RegisterRPCGroupCallsServer(
+			grpcServer,
+			groupcalls_helper.New(groupcalls_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// importedchats_helper
+		mtproto.RegisterRPCImportedChatsServer(
+			grpcServer,
+			importedchats_helper.New(importedchats_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// langpack_helper
+		mtproto.RegisterRPCLangpackServer(
+			grpcServer,
+			langpack_helper.New(langpack_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// messagethreads_helper
+		mtproto.RegisterRPCMessageThreadsServer(
+			grpcServer,
+			messagethreads_helper.New(messagethreads_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// reactions_helper
+		mtproto.RegisterRPCReactionsServer(
+			grpcServer,
+			reactions_helper.New(reactions_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// payments_helper
+		mtproto.RegisterRPCPaymentsServer(
+			grpcServer,
+			payments_helper.New(payments_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// polls_helper
+		mtproto.RegisterRPCPollsServer(
+			grpcServer,
+			polls_helper.New(polls_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// scheduledmessages_helper
+		mtproto.RegisterRPCScheduledMessagesServer(
+			grpcServer,
+			scheduledmessages_helper.New(scheduledmessages_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// statistics_helper
+		mtproto.RegisterRPCStatisticsServer(
+			grpcServer,
+			statistics_helper.New(statistics_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// stickers_helper
+		mtproto.RegisterRPCStickersServer(
+			grpcServer,
+			stickers_helper.New(stickers_helper.Config{
+				RpcServerConf: c.RpcServerConf,
+			}))
+
+		// wallpapers_helper
+		mtproto.RegisterRPCWallpapersServer(
+			grpcServer,
+			wallpapers_helper.New(wallpapers_helper.Config{
 				RpcServerConf: c.RpcServerConf,
 			}))
 	})
