@@ -202,6 +202,10 @@ func (c *session) onSessionConnNew(ctx context.Context, id string) {
 	if c.connState != kStateOnline {
 		c.changeConnState(ctx, kStateOnline)
 	}
+	// Flush any queued outgoing messages (RPC results, updates) that accumulated
+	// while the connection was down. Without this, results are delayed until the
+	// next timer tick or incoming message, causing client-side pending bubbles.
+	c.sendQueueToGateway(ctx, id)
 }
 
 func (c *session) onSessionMessageData(ctx context.Context, gatewayId, clientIp string, salt int64, msg *mtproto.TLMessage2) {
@@ -273,11 +277,16 @@ func (c *session) onSessionMessageData(ctx context.Context, gatewayId, clientIp 
 		}
 	}
 
-	if c.sessionState == kSessionStateNew || c.firstMsgId == 0 || minMsgId < c.firstMsgId {
+	if c.sessionState == kSessionStateNew || c.firstMsgId == 0 {
 		logx.WithContext(ctx).Infof("onNewSessionCreated - %#v, c: %s", msgs, c)
 		c.onNewSessionCreated(ctx, gatewayId, minMsgId)
 		c.firstMsgId = minMsgId
 		c.sessionState = kSessionStateCreated
+	} else if minMsgId < c.firstMsgId {
+		// Update firstMsgId tracking but do NOT re-trigger new_session_created.
+		// Re-triggering causes the client to think session is new, leading to
+		// resync loops, duplicate messages, and "Connecting..." state.
+		c.firstMsgId = minMsgId
 	}
 
 	defer func() {
