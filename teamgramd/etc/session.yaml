@@ -101,3 +101,5 @@ BFFProxyClients:
     "/mtproto.RPCSavedMessageDialogs": "bff.bff"
     "/mtproto.RPCPrivacySettings": "bff.bff"
     "/mtproto.RPCUserChannelProfiles": "bff.bff"
+    "/mtproto.RPCPasskey": "bff.bff"
+    "/mtproto.RPCPremium": "bff.bff"
