@@ -20,5 +20,5 @@ func (c *DialogCore) DialogGetDialogsCount(in *dialog.TLDialogGetDialogsCount) (
 	// TODO: not impl
 	c.Logger.Errorf("dialog.getDialogsCount - error: method DialogGetDialogsCount not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLInt32(&mtproto.Int32{V: 0}).To_Int32(), nil
 }

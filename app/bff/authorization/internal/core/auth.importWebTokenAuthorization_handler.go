@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AuthImportWebTokenAuthorization(in *mtproto.TLAuthImportWebTokenAuthorization) (*mtproto.Auth_Authorization, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAuthAuthorization(&mtproto.Auth_Authorization{}).To_Auth_Authorization(), nil
 }

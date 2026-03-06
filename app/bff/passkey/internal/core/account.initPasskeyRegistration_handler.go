@@ -27,5 +27,5 @@ import (
 func (c *PasskeyCore) AccountInitPasskeyRegistration(in *mtproto.TLAccountInitPasskeyRegistration) (*mtproto.Account_PasskeyRegistrationOptions, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAccountPasskeyRegistrationOptions(&mtproto.Account_PasskeyRegistrationOptions{}).To_Account_PasskeyRegistrationOptions(), nil
 }

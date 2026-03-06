@@ -55,7 +55,7 @@ func (c *MessagesCore) MessagesEditMessage(in *mtproto.TLMessagesEditMessage) (*
 		})
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 	default:
 		c.Logger.Errorf("invalid peer: %v", in.Peer)
 		err = mtproto.ErrPeerIdInvalid

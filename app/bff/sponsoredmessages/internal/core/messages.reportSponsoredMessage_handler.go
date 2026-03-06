@@ -27,5 +27,5 @@ import (
 func (c *SponsoredMessagesCore) MessagesReportSponsoredMessage(in *mtproto.TLMessagesReportSponsoredMessage) (*mtproto.Channels_SponsoredMessageReportResult, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLChannelsSponsoredMessageReportResultChooseOption(&mtproto.Channels_SponsoredMessageReportResult{}).To_Channels_SponsoredMessageReportResult(), nil
 }

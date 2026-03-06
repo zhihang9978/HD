@@ -79,7 +79,7 @@ func (c *ChatsCore) MessagesEditChatDefaultBannedRights(in *mtproto.TLMessagesEd
 		}).To_Updates()
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 	default:
 		err := mtproto.ErrPeerIdInvalid
 		c.Logger.Errorf("invalid peer type: {%v}")

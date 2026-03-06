@@ -27,5 +27,5 @@ import (
 func (c *PassportCore) AccountGetAuthorizationForm(in *mtproto.TLAccountGetAuthorizationForm) (*mtproto.Account_AuthorizationForm, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAccountAuthorizationForm(&mtproto.Account_AuthorizationForm{RequiredTypes: []*mtproto.SecureRequiredType{}, Values: []*mtproto.SecureValue{}, Errors: []*mtproto.SecureValueError{}, Users: []*mtproto.User{}}).To_Account_AuthorizationForm(), nil
 }

@@ -27,5 +27,5 @@ import (
 func (c *UserChannelProfilesCore) AccountUpdateVerified(in *mtproto.TLAccountUpdateVerified) (*mtproto.User, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLUserEmpty(&mtproto.User{Id: 0}).To_User(), nil
 }

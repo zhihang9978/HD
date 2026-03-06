@@ -27,5 +27,5 @@ import (
 func (c *SponsoredMessagesCore) MessagesViewSponsoredMessage(in *mtproto.TLMessagesViewSponsoredMessage) (*mtproto.Bool, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

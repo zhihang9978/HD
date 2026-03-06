@@ -20,5 +20,5 @@ func (c *DialogCore) DialogGetUserPinnedMessage(in *dialog.TLDialogGetUserPinned
 	// TODO: not impl
 	c.Logger.Errorf("dialog.getUserPinnedMessage - error: method DialogGetUserPinnedMessage not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLInt32(&mtproto.Int32{V: 0}).To_Int32(), nil
 }

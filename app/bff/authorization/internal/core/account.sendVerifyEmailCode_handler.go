@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AccountSendVerifyEmailCode(in *mtproto.TLAccountSendVerifyEmailCode) (*mtproto.Account_SentEmailCode, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAccountSentEmailCode(&mtproto.Account_SentEmailCode{EmailPattern: "", Length: 0}).To_Account_SentEmailCode(), nil
 }

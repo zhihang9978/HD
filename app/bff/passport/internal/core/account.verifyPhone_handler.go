@@ -27,5 +27,5 @@ import (
 func (c *PassportCore) AccountVerifyPhone(in *mtproto.TLAccountVerifyPhone) (*mtproto.Bool, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

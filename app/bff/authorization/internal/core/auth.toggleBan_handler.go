@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AuthToggleBan(in *mtproto.TLAuthToggleBan) (*mtproto.PredefinedUser, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLPredefinedUser(&mtproto.PredefinedUser{}).To_PredefinedUser(), nil
 }

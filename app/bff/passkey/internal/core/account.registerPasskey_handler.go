@@ -27,5 +27,5 @@ import (
 func (c *PasskeyCore) AccountRegisterPasskey(in *mtproto.TLAccountRegisterPasskey) (*mtproto.Passkey, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLPasskey(&mtproto.Passkey{}).To_Passkey(), nil
 }

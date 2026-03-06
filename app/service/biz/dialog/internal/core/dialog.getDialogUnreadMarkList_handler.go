@@ -10,7 +10,6 @@
 package core
 
 import (
-	"github.com/teamgram/proto/mtproto"
 	"github.com/teamgram/teamgram-server/app/service/biz/dialog/dialog"
 )
 
@@ -20,5 +19,5 @@ func (c *DialogCore) DialogGetDialogUnreadMarkList(in *dialog.TLDialogGetDialogU
 	// TODO: not impl
 	c.Logger.Errorf("dialog.getDialogUnreadMarkList - error: method DialogGetDialogUnreadMarkList not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return &dialog.Vector_DialogPeer{}, nil
 }

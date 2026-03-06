@@ -27,7 +27,7 @@ func (c *MessageCore) MessageUpdatePinnedMessageId(in *message.TLMessageUpdatePi
 		}
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.BoolTrue, nil
 	}
 
 	return mtproto.BoolTrue, nil

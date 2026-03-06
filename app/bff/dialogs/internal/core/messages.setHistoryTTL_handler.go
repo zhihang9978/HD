@@ -28,5 +28,5 @@ func (c *DialogsCore) MessagesSetHistoryTTL(in *mtproto.TLMessagesSetHistoryTTL)
 	// TODO: not impl
 	c.Logger.Errorf("messages.setHistoryTTL - error: method MessagesSetHistoryTTL not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 }

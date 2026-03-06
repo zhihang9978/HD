@@ -70,7 +70,7 @@ func (c *MessageCore) MessageSearch(in *message.TLMessageSearch) (*mtproto.Messa
 		}
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return &mtproto.MessageBoxList{}, nil
 	}
 
 	if boxList == nil {

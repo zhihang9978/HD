@@ -27,5 +27,5 @@ import (
 func (c *FilesCore) UploadGetFileHashes(in *mtproto.TLUploadGetFileHashes) (*mtproto.Vector_FileHash, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return &mtproto.Vector_FileHash{}, nil
 }

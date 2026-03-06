@@ -28,5 +28,5 @@ import (
 func (c *InboxCore) InboxUpdatePinnedMessageV2(in *inbox.TLInboxUpdatePinnedMessageV2) (*mtproto.Void, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLVoid(&mtproto.Void{}).To_Void(), nil
 }

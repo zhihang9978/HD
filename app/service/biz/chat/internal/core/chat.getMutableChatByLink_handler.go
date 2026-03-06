@@ -20,5 +20,5 @@ func (c *ChatCore) ChatGetMutableChatByLink(in *chat.TLChatGetMutableChatByLink)
 	// TODO: not impl
 	c.Logger.Errorf("chat.getMutableChatByLink - error: method ChatGetMutableChatByLink not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return (*mtproto.MutableChat)(nil), nil
 }

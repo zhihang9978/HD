@@ -29,5 +29,5 @@ func (c *MsgCore) MsgDeleteChatHistory(in *msg.TLMsgDeleteChatHistory) (*mtproto
 	// TODO: not impl
 	c.Logger.Errorf("msg.deleteChatHistory - error: method MsgDeleteChatHistory not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

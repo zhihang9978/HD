@@ -27,5 +27,5 @@ import (
 func (c *PassportCore) AccountSendVerifyPhoneCode(in *mtproto.TLAccountSendVerifyPhoneCode) (*mtproto.Auth_SentCode, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAuthSentCode(&mtproto.Auth_SentCode{}).To_Auth_SentCode(), nil
 }

@@ -20,5 +20,5 @@ func (c *SyncCore) SyncPushUpdatesIfNot(in *sync.TLSyncPushUpdatesIfNot) (*mtpro
 	// TODO: not impl
 	c.Logger.Errorf("sync.pushUpdatesIfNot - error: method SyncPushUpdatesIfNot not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLVoid(&mtproto.Void{}).To_Void(), nil
 }

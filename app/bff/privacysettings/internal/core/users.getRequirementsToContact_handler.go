@@ -27,5 +27,5 @@ import (
 func (c *PrivacySettingsCore) UsersGetRequirementsToContact(in *mtproto.TLUsersGetRequirementsToContact) (*mtproto.Vector_RequirementToContact, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return &mtproto.Vector_RequirementToContact{}, nil
 }

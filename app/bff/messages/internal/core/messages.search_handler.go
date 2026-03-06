@@ -57,7 +57,7 @@ func (c *MessagesCore) MessagesSearch(in *mtproto.TLMessagesSearch) (*mtproto.Me
 	peer := mtproto.FromInputPeer2(c.MD.UserId, in.Peer)
 	if peer.IsChannel() {
 		// TODO: not impl
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLMessagesMessages(&mtproto.Messages_Messages{Messages: []*mtproto.Message{}, Chats: []*mtproto.Chat{}, Users: []*mtproto.User{}}).To_Messages_Messages(), nil
 	}
 
 	if in.GetFromId() != nil {

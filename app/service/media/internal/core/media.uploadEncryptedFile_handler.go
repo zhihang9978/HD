@@ -19,5 +19,5 @@ import (
 func (c *MediaCore) MediaUploadEncryptedFile(in *media.TLMediaUploadEncryptedFile) (*mtproto.EncryptedFile, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLEncryptedFile(&mtproto.EncryptedFile{}).To_EncryptedFile(), nil
 }

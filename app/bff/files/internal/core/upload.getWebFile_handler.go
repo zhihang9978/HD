@@ -39,6 +39,6 @@ func (c *FilesCore) UploadGetWebFile(in *mtproto.TLUploadGetWebFile) (*mtproto.U
 		return nil, err
 	default:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLUploadWebFile(&mtproto.Upload_WebFile{Size2: 0, MimeType: "", FileType: mtproto.MakeTLStorageFileUnknown(&mtproto.Storage_FileType{}).To_Storage_FileType(), Mtime: 0, Bytes: []byte{}}).To_Upload_WebFile(), nil
 	}
 }

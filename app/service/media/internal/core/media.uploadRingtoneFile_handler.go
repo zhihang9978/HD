@@ -28,5 +28,5 @@ import (
 func (c *MediaCore) MediaUploadRingtoneFile(in *media.TLMediaUploadRingtoneFile) (*mtproto.Document, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLDocumentEmpty(&mtproto.Document{Id: 0}).To_Document(), nil
 }

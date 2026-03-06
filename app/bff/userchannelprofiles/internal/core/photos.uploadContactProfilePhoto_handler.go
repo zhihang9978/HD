@@ -28,5 +28,5 @@ func (c *UserChannelProfilesCore) PhotosUploadContactProfilePhoto(in *mtproto.TL
 	// TODO: not impl
 	c.Logger.Errorf("photos.uploadContactProfilePhoto method not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLPhotosPhoto(&mtproto.Photos_Photo{Photo: mtproto.MakeTLPhotoEmpty(&mtproto.Photo{Id: 0}).To_Photo(), Users: []*mtproto.User{}}).To_Photos_Photo(), nil
 }

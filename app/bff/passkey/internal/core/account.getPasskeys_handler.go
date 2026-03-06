@@ -27,5 +27,5 @@ import (
 func (c *PasskeyCore) AccountGetPasskeys(in *mtproto.TLAccountGetPasskeys) (*mtproto.Account_Passkeys, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAccountPasskeys(&mtproto.Account_Passkeys{Passkeys: []*mtproto.Passkey{}}).To_Account_Passkeys(), nil
 }

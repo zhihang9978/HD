@@ -20,5 +20,5 @@ func (c *DialogCore) DialogMarkDialogUnread(in *dialog.TLDialogMarkDialogUnread)
 	// TODO: not impl
 	c.Logger.Errorf("dialog.markDialogUnread - error: method DialogMarkDialogUnread not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

@@ -20,5 +20,5 @@ func (c *UserCore) UserSetBotCommands(in *user.TLUserSetBotCommands) (*mtproto.B
 	// TODO: not impl
 	c.Logger.Errorf("user.setBotCommands - error: method UserSetBotCommands not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

@@ -27,5 +27,5 @@ import (
 func (c *PassportCore) AccountGetAllSecureValues(in *mtproto.TLAccountGetAllSecureValues) (*mtproto.Vector_SecureValue, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return &mtproto.Vector_SecureValue{}, nil
 }

@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AuthRequestPasswordRecovery(in *mtproto.TLAuthRequestPasswordRecovery) (*mtproto.Auth_PasswordRecovery, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAuthPasswordRecovery(&mtproto.Auth_PasswordRecovery{EmailPattern: ""}).To_Auth_PasswordRecovery(), nil
 }

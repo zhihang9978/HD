@@ -48,7 +48,7 @@ func (c *MsgCore) MsgSendMessageV2(in *msg.TLMsgSendMessageV2) (*mtproto.Updates
 
 	for _, outBox := range outBoxList {
 		if outBox.GetScheduleDate().GetValue() != 0 {
-			return nil, mtproto.ErrMethodNotImpl
+			return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 		}
 	}
 
@@ -91,7 +91,7 @@ func (c *MsgCore) MsgSendMessageV2(in *msg.TLMsgSendMessageV2) (*mtproto.Updates
 			}
 		}
 	case mtproto.PEER_CHANNEL:
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 	default:
 		c.Logger.Errorf("msg.sendMessageV2 - error: invalid peer(%v)", peer)
 		err = mtproto.ErrPeerIdInvalid

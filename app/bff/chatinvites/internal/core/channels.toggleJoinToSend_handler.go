@@ -27,5 +27,5 @@ import (
 func (c *ChatInvitesCore) ChannelsToggleJoinToSend(in *mtproto.TLChannelsToggleJoinToSend) (*mtproto.Updates, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 }

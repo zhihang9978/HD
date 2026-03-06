@@ -27,5 +27,5 @@ import (
 func (c *FilesCore) MessagesUploadEncryptedFile(in *mtproto.TLMessagesUploadEncryptedFile) (*mtproto.EncryptedFile, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLEncryptedFile(&mtproto.EncryptedFile{}).To_EncryptedFile(), nil
 }

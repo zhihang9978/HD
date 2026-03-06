@@ -20,5 +20,5 @@ func (c *UserCore) UserGetFullUser(in *user.TLUserGetFullUser) (*mtproto.Users_U
 	// TODO: not impl
 	c.Logger.Errorf("user.getFullUser - error: method UserGetFullUser not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLUsersUserFull(&mtproto.Users_UserFull{}).To_Users_UserFull(), nil
 }

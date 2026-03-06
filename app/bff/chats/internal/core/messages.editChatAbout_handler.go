@@ -41,7 +41,7 @@ func (c *ChatsCore) MessagesEditChatAbout(in *mtproto.TLMessagesEditChatAbout) (
 		}
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.BoolTrue, nil
 	default:
 		err := mtproto.ErrPeerIdInvalid
 		c.Logger.Errorf("invalid peer type: {%v}")

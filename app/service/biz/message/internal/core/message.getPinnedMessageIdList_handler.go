@@ -10,7 +10,6 @@
 package core
 
 import (
-	"github.com/teamgram/proto/mtproto"
 	"github.com/teamgram/teamgram-server/app/service/biz/message/message"
 )
 
@@ -20,5 +19,5 @@ func (c *MessageCore) MessageGetPinnedMessageIdList(in *message.TLMessageGetPinn
 	// TODO: not impl
 	c.Logger.Errorf("message.getPinnedMessageIdList - error: method MessageGetPinnedMessageIdList not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return &message.Vector_Int{}, nil
 }

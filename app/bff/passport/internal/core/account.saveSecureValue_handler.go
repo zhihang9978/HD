@@ -27,5 +27,5 @@ import (
 func (c *PassportCore) AccountSaveSecureValue(in *mtproto.TLAccountSaveSecureValue) (*mtproto.SecureValue, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLSecureValue(&mtproto.SecureValue{Type: mtproto.MakeTLSecureValueTypePersonalDetails(&mtproto.SecureValueType{}).To_SecureValueType()}).To_SecureValue(), nil
 }

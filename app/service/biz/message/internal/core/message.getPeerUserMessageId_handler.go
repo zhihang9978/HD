@@ -20,5 +20,5 @@ func (c *MessageCore) MessageGetPeerUserMessageId(in *message.TLMessageGetPeerUs
 	// TODO: not impl
 	c.Logger.Errorf("message.getPeerUserMessageId - error: method MessageGetPeerUserMessageId not impl")
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLInt32(&mtproto.Int32{V: 0}).To_Int32(), nil
 }

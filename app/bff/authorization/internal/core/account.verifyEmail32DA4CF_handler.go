@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AccountVerifyEmail32DA4CF(in *mtproto.TLAccountVerifyEmail32DA4CF) (*mtproto.Account_EmailVerified, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAccountEmailVerified(&mtproto.Account_EmailVerified{}).To_Account_EmailVerified(), nil
 }

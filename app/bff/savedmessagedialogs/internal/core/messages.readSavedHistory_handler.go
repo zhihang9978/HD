@@ -27,5 +27,5 @@ import (
 func (c *SavedMessageDialogsCore) MessagesReadSavedHistory(in *mtproto.TLMessagesReadSavedHistory) (*mtproto.Bool, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

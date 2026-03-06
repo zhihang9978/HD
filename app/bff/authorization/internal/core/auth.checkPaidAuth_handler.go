@@ -27,5 +27,5 @@ import (
 func (c *AuthorizationCore) AuthCheckPaidAuth(in *mtproto.TLAuthCheckPaidAuth) (*mtproto.Auth_SentCode, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAuthSentCode(&mtproto.Auth_SentCode{}).To_Auth_SentCode(), nil
 }

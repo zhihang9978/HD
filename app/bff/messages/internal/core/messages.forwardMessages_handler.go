@@ -168,7 +168,7 @@ func (c *MessagesCore) makeForwardMessages(
 	case mtproto.PEER_CHANNEL:
 		// TODO: not impl
 
-		return nil, mtproto.ErrMethodNotImpl
+		return nil, mtproto.ErrChannelPrivate
 	default:
 		messageList, _ = c.svcCtx.Dao.MessageClient.MessageGetUserMessageList(c.ctx, &message.TLMessageGetUserMessageList{
 			UserId: c.MD.UserId,

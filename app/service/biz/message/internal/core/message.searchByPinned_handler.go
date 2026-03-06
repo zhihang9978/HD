@@ -35,7 +35,7 @@ func (c *MessageCore) MessageSearchByPinned(in *message.TLMessageSearchByPinned)
 			})
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return &mtproto.MessageBoxList{}, nil
 	}
 
 	return mtproto.MakeTLMessageBoxList(&mtproto.MessageBoxList{

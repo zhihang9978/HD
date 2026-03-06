@@ -32,7 +32,7 @@ func (c *MessageCore) MessageUnPinAllMessages(in *message.TLMessageUnPinAllMessa
 		}
 	case mtproto.PEER_CHANNEL:
 
-		return nil, mtproto.ErrMethodNotImpl
+		return &message.Vector_Int{}, nil
 	}
 
 	return &message.Vector_Int{

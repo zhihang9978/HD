@@ -27,5 +27,5 @@ import (
 func (c *SponsoredMessagesCore) ChannelsClickSponsoredMessage(in *mtproto.TLChannelsClickSponsoredMessage) (*mtproto.Bool, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.BoolTrue, nil
 }

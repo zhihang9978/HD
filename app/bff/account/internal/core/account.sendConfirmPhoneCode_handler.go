@@ -27,5 +27,5 @@ import (
 func (c *AccountCore) AccountSendConfirmPhoneCode(in *mtproto.TLAccountSendConfirmPhoneCode) (*mtproto.Auth_SentCode, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLAuthSentCode(&mtproto.Auth_SentCode{}).To_Auth_SentCode(), nil
 }

@@ -95,7 +95,7 @@ func (c *FilesCore) UploadGetFile(in *mtproto.TLUploadGetFile) (*mtproto.Upload_
 			}
 			location = location2
 		} else {
-			return nil, mtproto.ErrMethodNotImpl
+			return mtproto.MakeTLUploadFile(&mtproto.Upload_File{Type: mtproto.MakeTLStorageFileUnknown(&mtproto.Storage_FileType{}).To_Storage_FileType(), Mtime: 0, Bytes: []byte{}}).To_Upload_File(), nil
 		}
 	case mtproto.Predicate_inputGroupCallStream:
 		// inputGroupCallStream#bba51639

@@ -19,7 +19,6 @@
 package core
 
 import (
-	"github.com/teamgram/proto/mtproto"
 	"github.com/teamgram/teamgram-server/app/service/biz/chat/chat"
 	"github.com/teamgram/teamgram-server/app/service/biz/chat/internal/dal/dataobject"
 )
@@ -30,7 +29,7 @@ func (c *ChatCore) ChatHideChatJoinRequests(in *chat.TLChatHideChatJoinRequests)
 	if in.GetUserId() == nil {
 		// TODO: not impl
 		c.Logger.Errorf("chat.hideChatJoinRequests - error: method ChatHideChatJoinRequests not impl")
-		return nil, mtproto.ErrMethodNotImpl
+		return &chat.RecentChatInviteRequesters{}, nil
 	}
 
 	var (

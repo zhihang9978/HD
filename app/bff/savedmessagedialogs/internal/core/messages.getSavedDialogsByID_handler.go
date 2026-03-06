@@ -27,5 +27,5 @@ import (
 func (c *SavedMessageDialogsCore) MessagesGetSavedDialogsByID(in *mtproto.TLMessagesGetSavedDialogsByID) (*mtproto.Messages_SavedDialogs, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLMessagesSavedDialogs(&mtproto.Messages_SavedDialogs{Dialogs: []*mtproto.SavedDialog{}, Messages: []*mtproto.Message{}, Chats: []*mtproto.Chat{}, Users: []*mtproto.User{}}).To_Messages_SavedDialogs(), nil
 }

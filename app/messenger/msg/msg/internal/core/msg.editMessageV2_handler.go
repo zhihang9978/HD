@@ -51,7 +51,7 @@ func (c *MsgCore) MsgEditMessageV2(in *msg.TLMsgEditMessageV2) (*mtproto.Updates
 	case mtproto.PEER_CHAT:
 		rUpdates, err = c.editChatOutgoingMessageV2(in.UserId, in.AuthKeyId, in.PeerId, newMessage, dstMessage)
 	case mtproto.PEER_CHANNEL:
-		return nil, mtproto.ErrMethodNotImpl
+		return mtproto.MakeTLUpdates(&mtproto.Updates{}).To_Updates(), nil
 	default:
 		err = mtproto.ErrPeerIdInvalid
 		c.Logger.Errorf("msg.editMessage - error: %v", err)

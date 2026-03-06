@@ -27,5 +27,5 @@ import (
 func (c *SavedMessageDialogsCore) ChannelsGetMessageAuthor(in *mtproto.TLChannelsGetMessageAuthor) (*mtproto.User, error) {
 	// TODO: not impl
 
-	return nil, mtproto.ErrMethodNotImpl
+	return mtproto.MakeTLUserEmpty(&mtproto.User{Id: 0}).To_User(), nil
 }
