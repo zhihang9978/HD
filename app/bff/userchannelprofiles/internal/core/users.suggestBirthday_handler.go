@@ -26,7 +26,6 @@ import (
 // users.suggestBirthday#fc533372 id:InputUser birthday:Birthday = Updates;
 func (c *UserChannelProfilesCore) UsersSuggestBirthday(in *mtproto.TLUsersSuggestBirthday) (*mtproto.Updates, error) {
 	// TODO: not impl
-	c.Logger.Errorf("users.suggestBirthday blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
 	return nil, mtproto.ErrMethodNotImpl
 }

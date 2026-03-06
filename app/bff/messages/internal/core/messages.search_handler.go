@@ -57,7 +57,6 @@ func (c *MessagesCore) MessagesSearch(in *mtproto.TLMessagesSearch) (*mtproto.Me
 	peer := mtproto.FromInputPeer2(c.MD.UserId, in.Peer)
 	if peer.IsChannel() {
 		// TODO: not impl
-		c.Logger.Errorf("messages.search blocked, License key from https://teamgram.net required to unlock enterprise features.")
 		return nil, mtproto.ErrMethodNotImpl
 	}
 

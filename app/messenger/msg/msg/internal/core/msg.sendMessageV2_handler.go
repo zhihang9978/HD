@@ -48,7 +48,6 @@ func (c *MsgCore) MsgSendMessageV2(in *msg.TLMsgSendMessageV2) (*mtproto.Updates
 
 	for _, outBox := range outBoxList {
 		if outBox.GetScheduleDate().GetValue() != 0 {
-			c.Logger.Errorf("msg.sendMessageV2 blocked, License key from https://teamgram.net required to unlock enterprise features.")
 			return nil, mtproto.ErrMethodNotImpl
 		}
 	}
@@ -92,7 +91,6 @@ func (c *MsgCore) MsgSendMessageV2(in *msg.TLMsgSendMessageV2) (*mtproto.Updates
 			}
 		}
 	case mtproto.PEER_CHANNEL:
-		c.Logger.Errorf("msg.sendMessageV2 blocked, License key from https://teamgram.net required to unlock enterprise features.")
 		return nil, mtproto.ErrMethodNotImpl
 	default:
 		c.Logger.Errorf("msg.sendMessageV2 - error: invalid peer(%v)", peer)

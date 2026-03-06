@@ -1,35 +1,77 @@
-// Copyright 2022 Teamgram Authors
-//  All rights reserved.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//   http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-// Author: teamgramio (teamgram.io@gmail.com)
-//
-
 package core
 
 import (
 	"github.com/teamgram/proto/mtproto"
 )
 
-// HelpGetCountriesList
-// help.getCountriesList#735787a8 lang_code:string hash:int = help.CountriesList;
 func (c *ConfigurationCore) HelpGetCountriesList(in *mtproto.TLHelpGetCountriesList) (*mtproto.Help_CountriesList, error) {
-	// TODO: not impl
-	c.Logger.Errorf("help.getCountriesList blocked, License key from https://teamgram.net required to unlock enterprise features.")
-
-	return mtproto.MakeTLHelpCountriesList(&mtproto.Help_CountriesList{
-		Countries: []*mtproto.Help_Country{},
-		Hash:      0,
-	}).To_Help_CountriesList(), nil
+	countries := []*mtproto.Help_Country{
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "CN", DefaultName: "China",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "86", Prefixes: []string{}, Patterns: []string{"XXX XXXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "US", DefaultName: "United States",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "1", Prefixes: []string{}, Patterns: []string{"XXX XXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "GB", DefaultName: "United Kingdom",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "44", Prefixes: []string{}, Patterns: []string{"XXXX XXXXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "RU", DefaultName: "Russia",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "7", Prefixes: []string{}, Patterns: []string{"XXX XXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "DE", DefaultName: "Germany",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "49", Prefixes: []string{}, Patterns: []string{"XXXX XXXXXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "JP", DefaultName: "Japan",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "81", Prefixes: []string{}, Patterns: []string{"XX XXXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "KR", DefaultName: "South Korea",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "82", Prefixes: []string{}, Patterns: []string{"XX XXXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "IN", DefaultName: "India",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "91", Prefixes: []string{}, Patterns: []string{"XXXXX XXXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "SG", DefaultName: "Singapore",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "65", Prefixes: []string{}, Patterns: []string{"XXXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "HK", DefaultName: "Hong Kong",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "852", Prefixes: []string{}, Patterns: []string{"XXXX XXXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+		mtproto.MakeTLHelpCountry(&mtproto.Help_Country{
+			Hidden: false, Iso2: "TW", DefaultName: "Taiwan",
+			CountryCodes: []*mtproto.Help_CountryCode{
+				mtproto.MakeTLHelpCountryCode(&mtproto.Help_CountryCode{CountryCode: "886", Prefixes: []string{}, Patterns: []string{"XXX XXX XXX"}}).To_Help_CountryCode(),
+			},
+		}).To_Help_Country(),
+	}
+	return mtproto.MakeTLHelpCountriesList(&mtproto.Help_CountriesList{Countries: countries, Hash: 0}).To_Help_CountriesList(), nil
 }

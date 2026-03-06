@@ -27,7 +27,6 @@ import (
 // dialog.getDialogFilterTags user_id:long = Bool;
 func (c *DialogCore) DialogGetDialogFilterTags(in *dialog.TLDialogGetDialogFilterTags) (*mtproto.Bool, error) {
 	// TODO: not impl
-	c.Logger.Errorf("dialog.getDialogFilterTags blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
 	return nil, mtproto.ErrMethodNotImpl
 }

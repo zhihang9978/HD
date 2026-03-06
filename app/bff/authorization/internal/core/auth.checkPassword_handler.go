@@ -27,7 +27,6 @@ import (
 // auth.checkPassword#d18b4d16 password:InputCheckPasswordSRP = auth.Authorization;
 func (c *AuthorizationCore) AuthCheckPassword(in *mtproto.TLAuthCheckPassword) (*mtproto.Auth_Authorization, error) {
 	// TODO: check password
-	c.Logger.Errorf("auth.checkPassword blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
 	user, err := c.svcCtx.UserClient.UserGetImmutableUser(c.ctx, &userpb.TLUserGetImmutableUser{
 		Id: c.MD.UserId,

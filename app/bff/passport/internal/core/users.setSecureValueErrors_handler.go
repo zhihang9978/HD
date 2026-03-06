@@ -26,7 +26,6 @@ import (
 // users.setSecureValueErrors#90c894b5 id:InputUser errors:Vector<SecureValueError> = Bool;
 func (c *PassportCore) UsersSetSecureValueErrors(in *mtproto.TLUsersSetSecureValueErrors) (*mtproto.Bool, error) {
 	// TODO: not impl
-	c.Logger.Errorf("users.setSecureValueErrors blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
 	return nil, mtproto.ErrMethodNotImpl
 }

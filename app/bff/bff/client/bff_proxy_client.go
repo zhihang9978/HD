@@ -67,7 +67,6 @@ func (c *BFFProxyClient) GetRpcClientByRequest(t interface{}) (zrpc.Client, erro
 		return c2, nil
 	} else {
 		// logx.Errorf("not found method: %s", rt.Name())
-		// logx.Errorf("%s blocked, License key from https://teamgram.net required to unlock enterprise features.", rt.Name())
 	}
 
 	// TODO(@benqi):

@@ -11,7 +11,6 @@ import (
 
 	"github.com/teamgram/proto/mtproto"
 	"github.com/teamgram/teamgram-server/app/service/biz/message/internal/dal/dataobject"
-	"github.com/zeromicro/go-zero/core/logx"
 )
 
 // GetOffsetIdBackwardSavedHistoryMessages offset
@@ -31,7 +30,6 @@ func (d *Dao) GetOffsetIdBackwardSavedHistoryMessages(ctx context.Context, userI
 		_ = rList
 		// logx.WithContext(ctx).Infof("GetOffsetIdBackwardHistoryMessages: %v", rList)
 	case mtproto.PEER_CHANNEL:
-		logx.WithContext(ctx).Errorf("blocked, License key from https://teamgram.net required to unlock enterprise features.")
 	}
 
 	messages = mtproto.ToSafeMessageBoxList(messages)
@@ -53,7 +51,6 @@ func (d *Dao) GetOffsetIdForwardSavedHistoryMessages(ctx context.Context, userId
 			})
 		_ = rList
 	case mtproto.PEER_CHANNEL:
-		logx.WithContext(ctx).Errorf("blocked, License key from https://teamgram.net required to unlock enterprise features.")
 	}
 
 	messages = mtproto.ToSafeMessageBoxList(messages)
@@ -75,7 +72,6 @@ func (d *Dao) GetOffsetDateBackwardSavedHistoryMessages(ctx context.Context, use
 			})
 		_ = rList
 	case mtproto.PEER_CHANNEL:
-		logx.WithContext(ctx).Errorf("blocked, License key from https://teamgram.net required to unlock enterprise features.")
 	}
 
 	messages = mtproto.ToSafeMessageBoxList(messages)
@@ -97,7 +93,6 @@ func (d *Dao) GetOffsetDateForwardSavedHistoryMessages(ctx context.Context, user
 			})
 		_ = rList
 	case mtproto.PEER_CHANNEL:
-		logx.Errorf("blocked, License key from https://teamgram.net required to unlock enterprise features.")
 	}
 
 	messages = mtproto.ToSafeMessageBoxList(messages)

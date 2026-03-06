@@ -167,7 +167,6 @@ func (c *MessagesCore) makeForwardMessages(
 	switch fromPeer.PeerType {
 	case mtproto.PEER_CHANNEL:
 		// TODO: not impl
-		c.Logger.Errorf("messages.forwardMessages blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
 		return nil, mtproto.ErrMethodNotImpl
 	default:
