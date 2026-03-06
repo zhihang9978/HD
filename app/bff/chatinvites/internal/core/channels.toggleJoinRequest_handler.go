@@ -28,5 +28,5 @@ func (c *ChatInvitesCore) ChannelsToggleJoinRequest(in *mtproto.TLChannelsToggle
 	// TODO: not impl
 	c.Logger.Errorf("channels.toggleJoinRequest blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

@@ -28,5 +28,5 @@ func (c *MessagesCore) MessagesGetSearchResultsCalendar(in *mtproto.TLMessagesGe
 	// TODO: not impl
 	c.Logger.Errorf("messages.getSearchResultsCalendar blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

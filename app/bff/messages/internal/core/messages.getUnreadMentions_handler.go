@@ -107,7 +107,7 @@ func (c *MessagesCore) MessagesGetUnreadMentions(in *mtproto.TLMessagesGetUnread
 		//}).To_Messages_Messages()
 		c.Logger.Errorf("messages.readHistory blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	default:
 		err = mtproto.ErrPeerIdInvalid
 		c.Logger.Errorf("messages.getHistory - error: %v", err)

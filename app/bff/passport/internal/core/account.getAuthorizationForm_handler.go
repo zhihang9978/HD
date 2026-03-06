@@ -28,5 +28,5 @@ func (c *PassportCore) AccountGetAuthorizationForm(in *mtproto.TLAccountGetAutho
 	// TODO: not impl
 	c.Logger.Errorf("account.getAuthorizationForm blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

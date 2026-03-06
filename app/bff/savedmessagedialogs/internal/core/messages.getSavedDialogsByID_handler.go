@@ -28,5 +28,5 @@ func (c *SavedMessageDialogsCore) MessagesGetSavedDialogsByID(in *mtproto.TLMess
 	// TODO: not impl
 	c.Logger.Errorf("messages.getSavedDialogsByID blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

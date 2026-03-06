@@ -33,7 +33,7 @@ func (c *MessageCore) MessageUnPinAllMessages(in *message.TLMessageUnPinAllMessa
 	case mtproto.PEER_CHANNEL:
 		c.Logger.Errorf("message.unPinAllMessages blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	}
 
 	return &message.Vector_Int{

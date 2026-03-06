@@ -28,5 +28,5 @@ func (c *UsernamesCore) ChannelsUpdateUsername(in *mtproto.TLChannelsUpdateUsern
 	// TODO: not impl
 	c.Logger.Errorf("channels.updateUsername blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AuthRequestFirebaseSms(in *mtproto.TLAuthRequestFire
 	// TODO: not impl
 	c.Logger.Errorf("auth.requestFirebaseSms blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

@@ -28,5 +28,5 @@ func (c *ChatInvitesCore) MessagesHideAllChatJoinRequests(in *mtproto.TLMessages
 	// TODO: not impl
 	c.Logger.Errorf("messages.hideAllChatJoinRequests blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

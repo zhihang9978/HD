@@ -28,5 +28,5 @@ func (c *UserChannelProfilesCore) UsersSuggestBirthday(in *mtproto.TLUsersSugges
 	// TODO: not impl
 	c.Logger.Errorf("users.suggestBirthday blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

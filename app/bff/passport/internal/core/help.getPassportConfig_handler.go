@@ -28,5 +28,5 @@ func (c *PassportCore) HelpGetPassportConfig(in *mtproto.TLHelpGetPassportConfig
 	// TODO: not impl
 	c.Logger.Errorf("help.getPassportConfig blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

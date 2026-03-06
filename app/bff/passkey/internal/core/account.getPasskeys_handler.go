@@ -28,5 +28,5 @@ func (c *PasskeyCore) AccountGetPasskeys(in *mtproto.TLAccountGetPasskeys) (*mtp
 	// TODO: not impl
 	c.Logger.Errorf("account.getPasskeys blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

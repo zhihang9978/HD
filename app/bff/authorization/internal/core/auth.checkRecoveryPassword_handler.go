@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AuthCheckRecoveryPassword(in *mtproto.TLAuthCheckRec
 	// TODO: not impl
 	c.Logger.Errorf("auth.checkRecoveryPassword blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

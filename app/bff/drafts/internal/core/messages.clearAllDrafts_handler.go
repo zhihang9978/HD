@@ -69,7 +69,7 @@ func (c *DraftsCore) MessagesClearAllDrafts(in *mtproto.TLMessagesClearAllDrafts
 				syncUpdates.PushChat(chats...)
 			} else {
 				c.Logger.Errorf("messages.clearAllDrafts blocked, License key from https://teamgram.net required to unlock enterprise features.")
-				return nil, mtproto.ErrEnterpriseIsBlocked
+				return nil, mtproto.ErrMethodNotImpl
 			}
 		}
 

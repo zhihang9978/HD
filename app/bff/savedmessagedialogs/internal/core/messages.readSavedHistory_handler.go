@@ -28,5 +28,5 @@ func (c *SavedMessageDialogsCore) MessagesReadSavedHistory(in *mtproto.TLMessage
 	// TODO: not impl
 	c.Logger.Errorf("messages.readSavedHistory blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

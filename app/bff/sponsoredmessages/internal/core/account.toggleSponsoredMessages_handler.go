@@ -28,5 +28,5 @@ func (c *SponsoredMessagesCore) AccountToggleSponsoredMessages(in *mtproto.TLAcc
 	// TODO: not impl
 	c.Logger.Errorf("account.toggleSponsoredMessages blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

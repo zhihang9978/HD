@@ -28,5 +28,5 @@ func (c *PassportCore) AccountGetSecureValue(in *mtproto.TLAccountGetSecureValue
 	// TODO: not impl
 	c.Logger.Errorf("account.getSecureValue blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

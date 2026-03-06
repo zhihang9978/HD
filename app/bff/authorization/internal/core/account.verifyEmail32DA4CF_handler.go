@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AccountVerifyEmail32DA4CF(in *mtproto.TLAccountVerif
 	// TODO: not impl
 	c.Logger.Errorf("account.verifyEmail32DA4CF blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

@@ -28,5 +28,5 @@ func (c *ContactsCore) ContactsSetBlocked(in *mtproto.TLContactsSetBlocked) (*mt
 	// TODO: not impl
 	c.Logger.Errorf("contacts.setBlocked blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

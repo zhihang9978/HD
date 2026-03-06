@@ -29,5 +29,5 @@ func (c *InboxCore) InboxUpdatePinnedMessageV2(in *inbox.TLInboxUpdatePinnedMess
 	// TODO: not impl
 	c.Logger.Errorf("inbox.updatePinnedMessageV2 blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

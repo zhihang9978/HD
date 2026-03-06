@@ -28,5 +28,5 @@ func (c *MiscellaneousCore) HelpTest(in *mtproto.TLHelpTest) (*mtproto.Bool, err
 	// TODO: not impl
 	c.Logger.Errorf("help.test blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

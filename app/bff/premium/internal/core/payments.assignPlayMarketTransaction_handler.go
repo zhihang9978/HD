@@ -28,5 +28,5 @@ func (c *PremiumCore) PaymentsAssignPlayMarketTransaction(in *mtproto.TLPayments
 	// TODO: not impl
 	c.Logger.Errorf("payments.assignPlayMarketTransaction blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

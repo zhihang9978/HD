@@ -28,5 +28,5 @@ func (c *PassportCore) AccountVerifyPhone(in *mtproto.TLAccountVerifyPhone) (*mt
 	// TODO: not impl
 	c.Logger.Errorf("account.verifyPhone blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

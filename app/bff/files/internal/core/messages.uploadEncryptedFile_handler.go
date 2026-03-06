@@ -28,5 +28,5 @@ func (c *FilesCore) MessagesUploadEncryptedFile(in *mtproto.TLMessagesUploadEncr
 	// TODO: not impl
 	c.Logger.Errorf("messages.uploadEncryptedFile blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

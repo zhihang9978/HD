@@ -28,5 +28,5 @@ func (c *SponsoredMessagesCore) ChannelsReportSponsoredMessage(in *mtproto.TLCha
 	// TODO: not impl
 	c.Logger.Errorf("channels.reportSponsoredMessage blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

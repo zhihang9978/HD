@@ -96,7 +96,7 @@ func (c *FilesCore) UploadGetFile(in *mtproto.TLUploadGetFile) (*mtproto.Upload_
 			location = location2
 		} else {
 			c.Logger.Errorf("upload.getFile blocked, License key from https://teamgram.net required to unlock enterprise features.")
-			return nil, mtproto.ErrEnterpriseIsBlocked
+			return nil, mtproto.ErrMethodNotImpl
 		}
 	case mtproto.Predicate_inputGroupCallStream:
 		// inputGroupCallStream#bba51639

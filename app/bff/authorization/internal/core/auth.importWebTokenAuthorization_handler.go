@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AuthImportWebTokenAuthorization(in *mtproto.TLAuthIm
 	// TODO: not impl
 	c.Logger.Errorf("auth.importWebTokenAuthorization blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

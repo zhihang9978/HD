@@ -169,7 +169,7 @@ func (c *MessagesCore) makeForwardMessages(
 		// TODO: not impl
 		c.Logger.Errorf("messages.forwardMessages blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	default:
 		messageList, _ = c.svcCtx.Dao.MessageClient.MessageGetUserMessageList(c.ctx, &message.TLMessageGetUserMessageList{
 			UserId: c.MD.UserId,

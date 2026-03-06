@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AccountInvalidateSignInCodes(in *mtproto.TLAccountIn
 	// TODO: not impl
 	c.Logger.Errorf("account.invalidateSignInCodes blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

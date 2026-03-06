@@ -85,7 +85,7 @@ func (s *Service) StatusGetChannelOnlineUsers(ctx context.Context, request *stat
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.getChannelOnlineUsers blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
 
 // StatusSetUserChannelsOnline
@@ -94,7 +94,7 @@ func (s *Service) StatusSetUserChannelsOnline(ctx context.Context, request *stat
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.setUserChannelsOnline blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
 
 // StatusSetUserChannelsOffline
@@ -103,7 +103,7 @@ func (s *Service) StatusSetUserChannelsOffline(ctx context.Context, request *sta
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.setUserChannelsOffline blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
 
 // StatusSetChannelUserOffline
@@ -111,7 +111,7 @@ func (s *Service) StatusSetUserChannelsOffline(ctx context.Context, request *sta
 func (s *Service) StatusSetChannelUserOffline(ctx context.Context, request *status.TLStatusSetChannelUserOffline) (*mtproto.Bool, error) {
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.setChannelUserOffline blocked, License key from https://teamgram.net required to unlock enterprise features.")
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
 
 // StatusSetChannelUsersOnline
@@ -119,7 +119,7 @@ func (s *Service) StatusSetChannelUserOffline(ctx context.Context, request *stat
 func (s *Service) StatusSetChannelUsersOnline(ctx context.Context, request *status.TLStatusSetChannelUsersOnline) (*mtproto.Bool, error) {
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.setChannelUsersOnline blocked, License key from https://teamgram.net required to unlock enterprise features.")
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
 
 // StatusSetChannelOffline
@@ -127,5 +127,5 @@ func (s *Service) StatusSetChannelUsersOnline(ctx context.Context, request *stat
 func (s *Service) StatusSetChannelOffline(ctx context.Context, request *status.TLStatusSetChannelOffline) (*mtproto.Bool, error) {
 	// TODO: not impl
 	logx.WithContext(ctx).Errorf("status.setChannelOffline blocked, License key from https://teamgram.net required to unlock enterprise features.")
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

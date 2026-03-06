@@ -81,7 +81,7 @@ func (c *ChatsCore) MessagesGetMessageReadParticipants2C6F97B7(in *mtproto.TLMes
 	case mtproto.PEER_CHANNEL:
 		c.Logger.Errorf("messages.getMessageReadParticipants blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	default:
 		err := mtproto.ErrPeerIdInvalid
 		c.Logger.Errorf("messages.getMessageReadParticipants - error: %v", err)

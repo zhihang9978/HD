@@ -36,7 +36,7 @@ func (c *MessageCore) MessageSearchByPinned(in *message.TLMessageSearchByPinned)
 	case mtproto.PEER_CHANNEL:
 		c.Logger.Errorf("message.searchByPinned blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	}
 
 	return mtproto.MakeTLMessageBoxList(&mtproto.MessageBoxList{

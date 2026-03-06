@@ -28,5 +28,5 @@ func (c *PasskeyCore) AccountDeletePasskey(in *mtproto.TLAccountDeletePasskey) (
 	// TODO: not impl
 	c.Logger.Errorf("account.deletePasskey blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

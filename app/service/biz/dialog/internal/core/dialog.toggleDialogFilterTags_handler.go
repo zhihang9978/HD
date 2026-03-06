@@ -29,5 +29,5 @@ func (c *DialogCore) DialogToggleDialogFilterTags(in *dialog.TLDialogToggleDialo
 	// TODO: not impl
 	c.Logger.Errorf("dialog.toggleDialogFilterTags blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

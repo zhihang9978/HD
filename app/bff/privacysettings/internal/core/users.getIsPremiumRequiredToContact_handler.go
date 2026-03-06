@@ -28,5 +28,5 @@ func (c *PrivacySettingsCore) UsersGetIsPremiumRequiredToContact(in *mtproto.TLU
 	// TODO: not impl
 	c.Logger.Errorf("users.getIsPremiumRequiredToContact blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

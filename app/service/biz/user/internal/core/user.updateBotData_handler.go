@@ -29,5 +29,5 @@ func (c *UserCore) UserUpdateBotData(in *user.TLUserUpdateBotData) (*mtproto.Boo
 	// TODO: not impl
 	c.Logger.Errorf("user.updateBotData blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

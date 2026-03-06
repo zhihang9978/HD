@@ -28,5 +28,5 @@ func (c *PassportCore) UsersSetSecureValueErrors(in *mtproto.TLUsersSetSecureVal
 	// TODO: not impl
 	c.Logger.Errorf("users.setSecureValueErrors blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

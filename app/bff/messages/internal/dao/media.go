@@ -227,10 +227,10 @@ func GetMessageMedia(ctx context.Context, d MediaHelper, userId, ownerId int64, 
 		//	Poll:    media.Poll,
 		//	Results: nil,
 		//}).To_MessageMedia()
-		err = mtproto.ErrEnterpriseIsBlocked
+		err = mtproto.ErrMethodNotImpl
 
 	case mtproto.Predicate_inputMediaDice:
-		err = mtproto.ErrEnterpriseIsBlocked
+		err = mtproto.ErrMethodNotImpl
 		//// inputMediaDice#e66fbf7b emoticon:string = InputMedia;
 		//if media.Emoticon == "🎲" {
 		//	messageMedia = mtproto.MakeTLMessageMediaDice(&mtproto.MessageMedia{

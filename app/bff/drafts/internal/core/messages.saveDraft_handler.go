@@ -109,7 +109,7 @@ func (c *DraftsCore) MessagesSaveDraft(in *mtproto.TLMessagesSaveDraft) (*mtprot
 			syncUpdates.PushChat(chats...)
 		} else {
 			c.Logger.Errorf("messages.saveDraft blocked, License key from https://teamgram.net required to unlock enterprise features.")
-			return nil, mtproto.ErrEnterpriseIsBlocked
+			return nil, mtproto.ErrMethodNotImpl
 		}
 	}
 

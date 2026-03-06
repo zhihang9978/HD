@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AuthToggleBan(in *mtproto.TLAuthToggleBan) (*mtproto
 	// TODO: not impl
 	c.Logger.Errorf("auth.toggleBan blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

@@ -28,5 +28,5 @@ func (c *UpdatesCore) UpdatesGetChannelDifference(in *mtproto.TLUpdatesGetChanne
 	// TODO: not impl
 	c.Logger.Errorf("updates.getChannelDifference blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

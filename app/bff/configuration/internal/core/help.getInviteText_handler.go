@@ -28,5 +28,5 @@ func (c *ConfigurationCore) HelpGetInviteText(in *mtproto.TLHelpGetInviteText) (
 	// TODO: not impl
 	c.Logger.Errorf("help.getInviteText blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

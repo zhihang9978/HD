@@ -108,7 +108,7 @@ func (c *BFFProxyClient) InvokeContext(ctx context.Context, rpcMetaData *metadat
 	if t == nil {
 		err = fmt.Errorf("Invoke error: %v not regist!\n", object)
 		logger.Error("FindRPCContextTuple error: %v", err)
-		return nil, mtproto.NewRpcError(mtproto.ErrEnterpriseIsBlocked)
+		return nil, mtproto.NewRpcError(mtproto.ErrMethodNotImpl)
 	}
 
 	// logx.Infof("Invoke - method: {%s}", t.Method)

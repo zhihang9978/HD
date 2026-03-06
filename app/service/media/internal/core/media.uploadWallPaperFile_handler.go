@@ -20,5 +20,5 @@ func (c *MediaCore) MediaUploadWallPaperFile(in *media.TLMediaUploadWallPaperFil
 	// TODO: not impl
 	c.Logger.Errorf("media.uploadWallPaperFile blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

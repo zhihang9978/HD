@@ -28,5 +28,5 @@ func (c *ContactsCore) ContactsUpdateContactNote(in *mtproto.TLContactsUpdateCon
 	// TODO: not impl
 	c.Logger.Errorf("contacts.updateContactNote blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

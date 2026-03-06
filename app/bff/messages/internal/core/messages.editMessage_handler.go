@@ -56,7 +56,7 @@ func (c *MessagesCore) MessagesEditMessage(in *mtproto.TLMessagesEditMessage) (*
 	case mtproto.PEER_CHANNEL:
 		c.Logger.Errorf("messages.editMessage blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-		return nil, mtproto.ErrEnterpriseIsBlocked
+		return nil, mtproto.ErrMethodNotImpl
 	default:
 		c.Logger.Errorf("invalid peer: %v", in.Peer)
 		err = mtproto.ErrPeerIdInvalid

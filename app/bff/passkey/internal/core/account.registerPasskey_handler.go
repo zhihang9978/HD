@@ -28,5 +28,5 @@ func (c *PasskeyCore) AccountRegisterPasskey(in *mtproto.TLAccountRegisterPasske
 	// TODO: not impl
 	c.Logger.Errorf("account.registerPasskey blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

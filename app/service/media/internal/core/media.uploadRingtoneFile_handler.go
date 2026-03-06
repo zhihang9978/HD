@@ -29,5 +29,5 @@ func (c *MediaCore) MediaUploadRingtoneFile(in *media.TLMediaUploadRingtoneFile)
 	// TODO: not impl
 	c.Logger.Errorf("media.uploadRingtoneFile blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

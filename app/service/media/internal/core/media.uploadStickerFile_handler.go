@@ -20,5 +20,5 @@ func (c *MediaCore) MediaUploadStickerFile(in *media.TLMediaUploadStickerFile) (
 	// TODO: not impl
 	c.Logger.Errorf("media.uploadStickerFile blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

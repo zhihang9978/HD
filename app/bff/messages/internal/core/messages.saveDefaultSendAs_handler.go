@@ -28,5 +28,5 @@ func (c *MessagesCore) MessagesSaveDefaultSendAs(in *mtproto.TLMessagesSaveDefau
 	// TODO: not impl
 	c.Logger.Errorf("messages.saveDefaultSendAs blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

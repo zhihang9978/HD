@@ -28,5 +28,5 @@ func (c *AuthorizationCore) AccountSendVerifyEmailCode(in *mtproto.TLAccountSend
 	// TODO: not impl
 	c.Logger.Errorf("account.sendVerifyEmailCode blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }

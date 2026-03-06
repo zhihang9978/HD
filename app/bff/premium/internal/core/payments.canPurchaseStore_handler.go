@@ -28,5 +28,5 @@ func (c *PremiumCore) PaymentsCanPurchaseStore(in *mtproto.TLPaymentsCanPurchase
 	// TODO: not impl
 	c.Logger.Errorf("payments.canPurchaseStore blocked, License key from https://teamgram.net required to unlock enterprise features.")
 
-	return nil, mtproto.ErrEnterpriseIsBlocked
+	return nil, mtproto.ErrMethodNotImpl
 }
