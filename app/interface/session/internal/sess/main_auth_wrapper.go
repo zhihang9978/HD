@@ -867,7 +867,10 @@ func (m *MainAuthWrapper) onSessionNew(ctx context.Context, connMsg *connData) {
 		sess = newSession(connMsg.sessionId, sList)
 		sList.sessions[connMsg.sessionId] = sess
 	} else {
-		sess.sessionState = kSessionStateNew
+		// Do NOT reset sessionState to kSessionStateNew on reconnect.
+		// Resetting causes onNewSessionCreated to fire again, making the client
+		// think it's a new session, triggering resync and duplicate messages.
+		// The session already has valid state (queues, firstMsgId, etc).
 		logx.WithContext(ctx).Infof("onSessionNew - session(%d) found, conn: %s", m.authKeyId, connMsg)
 	}
 
